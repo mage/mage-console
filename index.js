@@ -15,9 +15,11 @@ var HISTORY_FILE = path.join(process.env.HOME, '.mage-history.json');
 var APP_LIB_PATH = path.join(process.cwd(), 'lib');
 
 /**
- * Boot mage
+ * Boot application
  */
-var mage = require(APP_LIB_PATH);
+require(APP_LIB_PATH);
+
+var mage = require('mage');
 
 process.on('uncaughtException', function (error) {
 	if (!mage.logger) {
