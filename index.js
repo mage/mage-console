@@ -417,12 +417,12 @@ net.createServer(function (localSocket) {
 			return;
 		}
 
-		logger.warning('Error raised on the connection to the worker debug port', error);
+		logger.verbose('Error raised on the connection to the worker debug port', error);
 		closeDebuggerConnection({ localSocket, debuggerConnection });
 	});
 
 	localSocket.on('error', function (error) {
-		logger.warning('Error raised on the connection to the debugger proxy port', error);
+		logger.verbose('Error raised on the connection to the debugger proxy port', error);
 		closeDebuggerConnection({ localSocket, debuggerConnection });
 	});
 
