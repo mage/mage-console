@@ -46,7 +46,11 @@ var mage = require(APP_LIB_PATH);
 var logger = mage.core.logger.context('REPL');
 var processManager = mage.core.processManager;
 
-mage.boot();
+mage.boot((error) => {
+	if (error) {
+		crash(error);
+	}
+});
 
 function setRawMode(val) {
 	var stdin = process.stdin;
